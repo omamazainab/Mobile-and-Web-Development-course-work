@@ -158,53 +158,7 @@ function task21_1(){
             document.write('Text: ' + text + '<br>' + 'There are ' + inst + " occurence of word 'the'")
     }
     
-    /////////////////////////////////// Chapter 35-38 ////////////////////////////////////////////
-    
-    function task35_1(){
-        var date = new Date()
-        document.write(date)
-    }
-    
-    function task35_2(){
-        fname = prompt('Enter your first name: ')
-        lname = prompt('Enter your last name: ')
-        fullname = fname+ ' '+lname
-        prompt('Hi, ' +fullname)
-    }
-    
-    function task35_3(){
-        var num1 = parseInt(prompt('Enter first number: '))
-        var num2 = parseInt(prompt('Enter second number: '))
-        var sum = num1+num2
-        alert('Sum of '+num1 + ' and '+ num2 + ' is '+ sum)
-    }
-    
-    function task35_4(){
-        var num1 = parseInt(prompt('Enter first number: '))
-        var num2 = parseInt(prompt('Enter second number: '))
-        var op = prompt('Enter operation; +, -, *, /')
-        func(num1, num2, op);
-        alert('Sum is: '+sum);
-        function func(num1, num2, op){
-            if (op === '+'){
-                sum = num1+num2
-            }
-            else if(op ==='-'){
-                sum = num1-num2
-            }
-            else if (op=== '*'){
-                sum = num1*num2
-            }
-            else if(op === '/'){
-                sum = num1/num2
-            }
-            else {
-                alert('invalid operation')
-            }
-            return sum
-        }
-    }
-// Chapter 31-34
+    // Chapter 31-34
 // 1.
 var currentdate = new Date();
 document.write(currentdate);
@@ -270,3 +224,49 @@ document.write("Charges per unit : 16");
 document.write("net amount payable with in due date : " + 416*16);
 document.write("late payment surcharge : 350");
 document.write("payment after due date : " + ((416*16)+350) );
+/////////////////////////////////// Chapter 35-38 ////////////////////////////////////////////
+    
+function task35_1(){
+    var date = new Date()
+    document.write(date)
+}
+
+function task35_2(){
+    fname = prompt('Enter your first name: ')
+    lname = prompt('Enter your last name: ')
+    fullname = fname+ ' '+lname
+    prompt('Hi, ' +fullname)
+}
+
+function task35_3(){
+    var num1 = parseInt(prompt('Enter first number: '))
+    var num2 = parseInt(prompt('Enter second number: '))
+    var sum = num1+num2
+    alert('Sum of '+num1 + ' and '+ num2 + ' is '+ sum)
+}
+
+function task35_4(){
+    var num1 = parseInt(prompt('Enter first number: '))
+    var num2 = parseInt(prompt('Enter second number: '))
+    var op = prompt('Enter operation; +, -, *, /')
+    func(num1, num2, op);
+    alert('Sum is: '+sum);
+    function func(num1, num2, op){
+        if (op === '+'){
+            sum = num1+num2
+        }
+        else if(op ==='-'){
+            sum = num1-num2
+        }
+        else if (op=== '*'){
+            sum = num1*num2
+        }
+        else if(op === '/'){
+            sum = num1/num2
+        }
+        else {
+            alert('invalid operation')
+        }
+        return sum
+    }
+}
