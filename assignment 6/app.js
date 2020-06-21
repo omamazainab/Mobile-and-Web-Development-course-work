@@ -1,164 +1,262 @@
-// Chapter 21-25 ////////////////////////////////////////////////////
+//Assignment # 21-25 JAVASCRIPT
 
-function task21_1(){
-    var fname = prompt('Enter your first name: ')
-    var lname = prompt('Enter your second name: ')
-    var fullname = fname +' '+ lname
-    alert('Hi, ' + fullname)
+//1. Write a program that takes two user inputs for first and last name using prompt and merge them in a new variable titled fullName. Greet the user using his full name.
+
+var firstName=prompt("Enter your first Name");
+var lastName=prompt("Enter your last Name");
+
+var fullName=firstName+" "+lastName;
+alert(fullName);
+
+//2. Write a program to take a user input about his favorite mobile phone model. Find and display the length of user input in your browser
+
+var mobileModel=prompt("Enter the model of your favourite mobile phone");
+
+alert("My favourite Mobile is "+mobileModel+" and length of string Length is "+mobileModel.length);
+
+//3. Write a program to find the index of letter “n” in the word “Pakistani” and display the result in your browser
+
+var string="PAKISTAN";
+var index=string.indexOf("N");
+document.write("Index of N in PAKISTAN is "+index);
+
+
+//4. Write a program to find the last index of letter “l” in the word “Hello World” and display the result in your browser.
+
+var string="Hello World";
+var index=string.lastIndexOf("l");
+document.write("<br> Index of l from last is "+index);
+
+//5. Write a program to find the character at 3rd index in the word “Pakistani” and display the result in your browser.
+var string="Pakistani";
+var char=string[3];
+document.write("<br> The character which is present on third index of the word Pakistani is "+char);
+
+
+//6. Repeat Q1 using string concat() method.
+var firstName=prompt("Enter your first Name");
+var lastName=prompt("Enter your last Name");
+fullName=firstName.concat(lastName);
+alert(fullName);
+
+
+//7. Write a program to replace the “Hyder” to “Islam” in the word “Hyderabad” and display the result in your browser.
+var city="Hyderabad";
+var replacement  = city.replace("Hyder", "Islam");
+document.write("<br> City: "+city);
+document.write("<br> After Replacement "+replacement);
+
+//8. Write a program to replace all occurrences of “and” in the string with “&” and display the result in your browser.
+var message = "Ali and Sami are best friends. They play cricket and football together.";
+var replace=message.replace(/and/g,"&");
+document.write("<br>After Replacement "+replace);
+
+
+//9. Write a program that converts a string “472” to a number 472. Display the values & types in your browser.
+
+var string="472";
+document.write("<br> String:"+string);
+var typeOfString=typeof string;
+document.write("<br>Type "+typeOfString);
+var number=parseInt(string,10);
+document.write("<br> Number: "+number);
+var typeOfNumber=typeof number;
+document.write("<br>Type "+typeOfNumber);
+//10.Write a program that takes user input. Convert and show the input in capital letters.
+var string=prompt("Enter the string");
+var capital=string.toUpperCase();
+document.write("The String in Capital letter is"+capital);
+
+//11. Write a program that takes user input. Convert and show the input in title case.
+var string=prompt("Enter the String");
+function titleCase(str) { 
+    str = str.toLowerCase().split(' '); 
+    for (var i = 0; i < str.length; i++) { 
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);  
+    } 
+    return str.join(' '); 
+  } 
+  document.write("The String in Title Case is "+titleCase(string)); 
+
+//12.Write a program that converts the variable num to string. var num = 35.36 ; Remove the dot to display “3536” display in your browser.
+var num=35.36;
+var string=num.toString();
+string[2]=" ";
+document.write("<br> The String is now"+string);
+
+//13. Write a program to take user input and store username in a variable. If the username contains any special symbol among [@ . , !], prompt the user to enter a valid username. For character codes of [@ .
+var userInput= prompt("Enter the username");
+for(i=0;i<userInput.length;i++)
+{
+    if(userInput.charCodeAt(i)===33||userInput.charCodeAt(i)===44||userInput.charCodeAt(i)===46||userInput.charCodeAt(i)===64)
+    {
+      alert("Please Enter a Valid user name");
     }
-    
-    function task21_2(){
-        var mob = prompt('Enter your favorite mobile phone model: ')
-        document.write('Your favorite phone is: ' + mob+'<br>'+ 'Length of string: '+ mob.length)
+}
+
+
+//14. You have an array A = [cake”, “apple pie”, “cookie”, “chips”, “patties”] Write a program to enable “search by user input” in an array. After searching, prompt the user whether the given item is found in the list or not. Note: Perform case insensitive search. Whether the user enters cookie, Cookie, COOKIE or coOkIE, program should inform about its availability. Example:
+var A = ["cake", "apple pie", "cookie", "chips", "patties"];
+document.write("<h1>Search by User Input</h1><br>");
+var userInput=prompt("Welcome to ABC backery!What do you want to order Sir/Ma'am");
+var dishid,dish=false;
+for(i=0;i<A.length;i++)
+{
+    if(userInput===A[i])
+    {
+        dishid=i;
+        dish=true;
+        break;
     }
-    
-    function task21_3(){
-        var str = 'Pakistani';
-         for (var i = 0; i < str.length; i++) {
-             if (str.slice(i, i+1) === "n") {
-                  document.write("String: " + str + "<br>" + "Index of 'n': " + i); 
-                    break;
-              }
-           }
+}
+if(dish===true)
+{
+document.write(userInput+" is available at "+"index "+dishid+"<br>");
+}
+else
+{
+document.write(userInput+" is not available in our backery <br>");
+}
+
+
+//15. Write a program to take password as an input from user. The password must qualify these requirements: a. It should contain alphabets and numbers b. It should not start with a number c. It must at least 6 characters long If the password does not meet above requirements, prompt the user to enter a valid password. For character codes of a-z, A-Z & 0-9, refer to ASCII table at the end of this document.
+
+var password=prompt("Enter the Password");
+var passwordValue;
+if(password.length<6)
+{
+    alert("The Password must be atleast 6 characters long");
+}
+for(i=0;i<password.length;i++)
+{
+    if((password.charCodeAt(i)>=48 && password.charCodeAt(i)<=57)||(password.charCodeAt(i)>=65 && password.charCodeAt(i)<=90)||(password.charCodeAt(i)>=97 && password.charCodeAt(i)<=122))
+    {
+        passwordValue=true;
     }
-    
-    function task21_4(){
-        var str = 'Hello world';
-        var ind = 0;
-        for (var i = 0; i < str.length; i++) {
-            if (str.slice(i, i+1) === "l") {
-             ind = i;
-            }
-          }
-          document.write("String: " + str + "<br>" + "Index of 'l': " + ind);  
+    else
+    {
+        passwordValue=false;
     }
-    
-    function task21_5(){
-        var str = 'Pakistani';
-        var ind = 3;
-        var st = str.charAt(3)
-          document.write("String: " + str + "<br>" + " Character at index 3: " + st);  
-    }
-    
-    function task21_6(){
-        var fname = prompt('Enter your first name: ')
-        var lname = prompt('Enter your second name: ')
-        var fullname = fname.concat(lname) 
-        alert('Hi, ' + fullname)
-    }
-    
-    function task21_7(){
-        var text = 'Hyderabad';
-        var rep = text.replace('Hyder', 'Islam');
-        document.write('City: ' + text + '<br>' + 'After Replacement: ' + rep );
-    }
-    
-    function task21_8(){
-        var message = 'Ali and Sami are best friends. They play cricket and football together.'
-        for (var i = 0; i < message.length; i++) {
-             if (message.slice(i, i +3) === 'and') {
-             message = message.slice(0, i) + "&" + message.slice(i+3);
-             }
-             }
-        document.write(message);
-    }
-    
-    function task21_9(){
-        var val = '472';
-        var num = parseInt(val)
-        var type_val = typeof(val)
-        var type_num = typeof(num)
-        document.write('Value: ' + val + '<br>' + 'Type: ' + type_val + '<br>' + 'Value: ' + num + '<br>' + 'Type: ' + type_num)
-    }
-    
-    function task21_10(){
-        var inp = prompt('Enter any word: ')
-        var cap = inp.toUpperCase()
-        document.write('User Input: ' + inp + '<br>' + 'Upper case: ' + cap) 
-    }
-    
-    function task21_11(){
-        var inp = prompt('Enter any word: ')
-        var cap = inp.charAt(0).toUpperCase() + inp.slice(1).toLowerCase()
-        document.write('User Input: ' + inp + '<br>' + 'Upper case: ' + cap) 
-    }
-    
-    function task21_12(){
-        var num = 35.36
-        var str = num.toString()
-        var st = str.replace('.', '')
-        document.write('Number: ' + num + '<br>' + 'String: ' + st )
-    }
-    
-    function task21_13(){
-        var ch = 0
-        var name = prompt('Enter Username: ')
-        for (i=0; i<name.length; i++){
-            if (name.codePointAt(i) === 33 || name.codePointAt(i) === 44 || name.codePointAt(i) === 46 || name.codePointAt(i) === 64){
-               ch +=1
-            }
-        }
-            if (ch === 1){
-                alert('Please enter a valid username.')
-            }
-            else{}
-    }
-    
-    function task21_14(){
-        var a = ['cake', 'apple pie', 'cookie', 'chips', 'patties']
-        var c = prompt("Welcome to ABC bakery. What do you want to order Sir/Ma'am: ")
-        var b = c.toLowerCase()
-        var flag = 0
-        for (i=0; i<a.length; i++){
-            if (a[i] === b){
-            flag+=1
-            break
-        }
-    }
-        if(flag === 1){
-                document.write(b+ ' is availabe at index '+i+ ' of our bakery.');
-            }
-            else {
-                document.write ('We are Sorry. '+b+' is not available at our bakery.')
-        }
-    }
-    
-    function task21_15(){
-        var password = prompt('Enter password must be alphanumeric.')
-        if (password.length<6 || (password.codePointAt(0) >48 && password.codePointAt(0) <58 )){
-            alert('Enter valid password.')
-        }
-        else{}
-    }
-    
-    function task21_16(){
-        var university = 'University of Karachi'
-        var arr = university.split("")
-        for (var i = 0; i<arr.length; i++){
-            document.write(arr[i] +'<br>')
-        }
-    }
-    
-    function task21_17(){
-        var input = prompt('Enter anything: ')
-        var last = input.length-1
-        var char = input.charAt(last)
-        document.write('User input: ' + input + '<br>' + 'Last character of input: ' +char)
-    }
-    
-    function task21_18(){
-        var text = 'The quick brown fox jumps over the lazy dog'
-        var inst = 0
-        for (var i = 0; i < text.length; i++) {
-            if (text.slice(i, i +3) === 'the') {
-            inst += 1
-            }
-            else{}
-            }
-            document.write('Text: ' + text + '<br>' + 'There are ' + inst + " occurence of word 'the'")
-    }
-    
-    // Chapter 31-34
+}
+if(passwordValue===false)
+{
+    alert("Password should contain only numbers and letters.");
+
+}
+if(password.charCodeAt(0)>=48 && password.charCodeAt(0)<=57)
+{
+    alert("The first character should not be a number");
+}
+
+//16. Write a program to convert the following string to an array using string split method. var university = “University of Karachi”; Display the elements of array in your browser.
+
+var string="University of Karachi";
+string=string.split('');
+for(i=0;i<string.length;i++)
+{
+    document.write("<br>"+string[i]);
+}
+//17. Write a program to display the last character of a user input.
+var userInput=prompt("Enter the string");
+var string=userInput[userInput.length-1];
+document.write("<br> The Last Character of Input is "+string);
+
+//18. You have a string “The quick brown fox jumps over the lazy dog”. Write a program to count number of occurrences of word “the” in given string.
+var string="the quick brown fox jumps over the lazy dog";
+count=string.match(/the/g).length;
+document.write("<br> Count of occurence of the in the string is"+count);
+
+
+
+//Assignment # 26-30 JAVASCRIPT
+
+/*
+1. Write a program that takes a positive integer from user &
+display the following in your browser.
+a. number
+b. round off value of the number
+c. floor value of the number
+d. ceil value of the number*/
+var userInput=+prompt("Enter the number");
+document.write("<br>The number is "+userInput);
+var roundedValue=Math.round(userInput);
+document.write("<br>The rounded  number is "+roundedValue);
+var floorValue=Math.floor(userInput);
+document.write("<br>The floor number is "+floorValue);
+var ceilValue=Math.ceil(userInput);
+document.write("<br>The Ceil of the number is "+ceilValue);
+
+/*2. Write a program that takes a negative floating point
+number from user & display the following in your browser.
+a. number
+b. round off value of the number
+c. floor value of the number
+d. ceil value of the number
+*/
+var userInput=+prompt("Enter the number");
+document.write("<br>The number is "+userInput);
+var roundedValue=Math.round(userInput);
+document.write("<br>The rounded  number is "+roundedValue);
+var floorValue=Math.floor(userInput);
+document.write("<br>The floor number is "+floorValue);
+var ceilValue=Math.ceil(userInput);
+document.write("<br>The Ceil of the number is "+ceilValue);
+
+/*3. Write a program that displays the absolute value of a number. E.g. absolute value of -4 is 4 & absolute value of 5 is 5
+*/
+var userInput=+prompt("Enter the number");
+var absValue=Math.abs(userInput);
+document.write("<br>The value after doing the absolute is"+absValue);
+
+/*
+4. Write a program that simulates a dice using random() method of JS Math class. Display the value of dice in your browser.:
+*/
+var randValue=Math.floor(Math.random() * 6) + 1;
+document.write("<br>The value of the dice is"+randValue);
+
+
+
+/*5. Write a program that simulates a coin toss using random() method of JS Math class. Display the value of coin in your browser
+*/
+var randomValue=Math.floor(Math.random()*2)+1;
+if(randomValue===1)
+{
+    document.write("<br>"+randomValue+"<br>"+"Random Coin Value :Tails");
+
+}
+else if(randomValue===2)
+{
+    document.write("<br>"+randomValue+"<br>"+"Random Coin Value :Heads");
+
+}
+
+//6. Write a program that shows a random number between 1 and 100 in your browser
+var randValue=Math.floor(Math.random() * 100) + 1;
+document.write("<br>The random value between 1 and 100 is "+randValue);
+
+
+/*
+7. Write a program that asks the user about his weight. Parse the user input and display his weight in your browser. Possible user inputs can be: a. 50 b. 50kgs c. 50.2kgs d. 50.2kilograms
+*/
+var userInput=prompt("Enter your weight!");
+var parsedValue=parseInt(userInput);
+document.write("<br>The weight of the user is "+parsedValue+" Kilograms");
+
+/*
+8. Write a program that stores a random secret number from 1 to 10 in a variable. Ask the user to input a number between 1 and 10. If the user input equals the secret number, congratulate the user.
+*/
+var userInput=+prompt("Enter the secret number");
+var random=Math.floor(Math.random() * 10) + 1;
+if(userInput===random)
+{
+    alert("Congratulations!You are Right");
+}
+else{
+    alert("Try Again!");
+}
+
+//Assignment # 31-34 JAVASCRIPT
+
 // 1.
 var currentdate = new Date();
 document.write(currentdate);
@@ -224,49 +322,262 @@ document.write("Charges per unit : 16");
 document.write("net amount payable with in due date : " + 416*16);
 document.write("late payment surcharge : 350");
 document.write("payment after due date : " + ((416*16)+350) );
-/////////////////////////////////// Chapter 35-38 ////////////////////////////////////////////
+
+
+//Assignment # 35-38
+//JAVASCRIPT
+
+//FUNCTIONS
+
+//1. Write a function that displays current date & time in your browser.
+
+function CurrentDate()
+{
+
+    var d=new Date();
+    return d;
+}
+
+document.write("<br><h1>"+CurrentDate()+"</h1>");
+
+
+//2. Write a function that takes first & last name and then it greets the user using his full name.
+
+function FullName(firstName,lastName)
+{
+    var fullName=firstName+" "+lastName;
+    return fullName;
+}
+
+alert("Good Morning"+FullName("Omama","Zainab"));
+
+//3. Write a function that adds two numbers (input by user)and returns the sum of two numbers.
+function AddNumbers(num1,num2)
+{
+
+var result=num1+num2;
+return result;
+
+}
+document.write("<br>The sum of the numbers is"+AddNumbers(5,4));
+
+//4. Calculator: Write a function that takes three arguments num1, num2 & operator & compute the desired operation. Return and  show the desired result in your browser.
+
+function Calculator(num1,num2,operator)
+{
+    var result;
+    if(operator==='+')
+    {
+        result=num1+num2;
     
-function task35_1(){
-    var date = new Date()
-    document.write(date)
+    }
+    else if(operator==='-')
+    {
+        result=num1-num2;
+    
+    }
+    else if(operator==='/')
+    {
+        result=num1/num2;
+    
+    }
+    else if(operator==='*')
+    {
+        result=num1*num2;
+    
+    }
+    return result;
 }
 
-function task35_2(){
-    fname = prompt('Enter your first name: ')
-    lname = prompt('Enter your last name: ')
-    fullname = fname+ ' '+lname
-    prompt('Hi, ' +fullname)
+document.write("<br>The Result made by the Calculator is "+Calculator(5,4,"+"));
+
+//5. Write a function that squares its argument.
+
+function Square(num)
+{
+var result=num*num;
+return result;
+
+}
+document.write("<br> The Square of the number is "+Square(4));
+
+//6. Write a function that computes factorial of a number.
+var sum=0;
+function Factorial(number)
+{
+var fact;
+for(i=1;i<number;i++)
+{
+    
+fact=number*i;
+sum=sum+fact;
 }
 
-function task35_3(){
-    var num1 = parseInt(prompt('Enter first number: '))
-    var num2 = parseInt(prompt('Enter second number: '))
-    var sum = num1+num2
-    alert('Sum of '+num1 + ' and '+ num2 + ' is '+ sum)
+return sum;
 }
+document.write("<br> The Factorial of the number is "+Factorial(4));
 
-function task35_4(){
-    var num1 = parseInt(prompt('Enter first number: '))
-    var num2 = parseInt(prompt('Enter second number: '))
-    var op = prompt('Enter operation; +, -, *, /')
-    func(num1, num2, op);
-    alert('Sum is: '+sum);
-    function func(num1, num2, op){
-        if (op === '+'){
-            sum = num1+num2
-        }
-        else if(op ==='-'){
-            sum = num1-num2
-        }
-        else if (op=== '*'){
-            sum = num1*num2
-        }
-        else if(op === '/'){
-            sum = num1/num2
-        }
-        else {
-            alert('invalid operation')
-        }
-        return sum
+
+//7. Write a function that take start and end number as inputs & display counting in your browser.
+
+function Counting(firstNumber,lastNumber)
+{
+    for(i=firstNumber;i<=lastNumber;i++)
+    {
+        document.write("<br>"+i);
     }
 }
+document.write("<br><h1>Counting</h1>");
+Counting(12,19);
+
+/*8. Write a nested function that computes hypotenuse of a
+right angle triangle.
+Hypotenuse2 = Base2 + Perpendicular2
+function | JAVASCRIPT
+Page 2 of 4
+Take base and perpendicular as inputs.
+Outer function : calculateHypotenuse()
+Inner function: calculateSquare()*/
+
+function calculateHypotenuse(base,perpendicular)
+{
+    function Square(x)
+    {
+     
+     return x*x;
+    }
+    Result=Square(base)+Square(perpendicular)
+    return Result;
+}
+document.write("<br>The hypoteneous of the right angle triangle is"+calculateHypotenuse(4,3));
+
+
+/*9. Write a function that calculates the area of a rectangle.
+A = width * height
+Pass width and height in following manner:
+i. Arguments as value
+ii.Arguments as variables*/
+function calculateArea(width,height)
+{
+    var Area=width*height;
+    return Area;
+}
+var Height=15;
+var Width=3;
+
+document.write("<br>"+"The Area of The Triangle by Passing Arguement as value  is "+calculateArea(Height,Width));
+document.write("<br>"+"The Area of The Triangle by Passing Arguement as variable  is "+calculateArea(7,4));
+
+
+//10. Write a JavaScript function that checks whether a passed string is palindrome or not?
+//A palindrome is word, phrase, or sequence that reads the same backward as
+//forward, e.g., madam.
+
+function Palindrome(string)
+{
+    var newString="";
+   for(i=string.length-1;i>=0;i--)
+   {
+     newString+=string[i];
+   }
+   if(string===newString)
+   {
+       document.write("<br>Its a Palindrome");
+   }
+   else
+   {
+       document.write("<br>Its not a Palindrome");
+   }
+}
+Palindrome("madam");
+
+/*11. Write a JavaScript function that accepts a string as a
+parameter and converts the first letter of each word of the
+string in upper case.
+EXAMPLE STRING : 'the quick brown fox'
+EXPECTED OUTPUT : 'The Quick Brown Fox'*/
+
+function titleCase(str) { 
+    str = str.toLowerCase().split(' '); 
+    for (var i = 0; i < str.length; i++) { 
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);  
+    } 
+    return str.join(' '); 
+  } 
+  document.write("<br> The String in Title Case is "+titleCase('the quick brown fox')); 
+
+/*12. Write a JavaScript function that accepts a string as a
+parameter and find the longest word within the string.
+EXAMPLE STRING : 'Web Development Tutorial'
+EXPECTED OUTPUT : 'Development'*/
+function find_longest_word(str)
+{
+  var array1 = str.match(/\w[a-z]{0,}/gi);
+  var result = array1[0];
+
+  for(var x = 1 ; x < array1.length ; x++)
+  {
+    if(result.length < array1[x].length)
+    {
+    result = array1[x];
+    } 
+  }
+  return result;
+}
+document.write("<br>"+find_longest_word('Web Development Tutorial'));
+
+/*13. Write a JavaScript function that accepts two arguments, a
+string and a letter and the function will count the number of
+function | JAVASCRIPT
+Page 3 of 4
+occurrences of the specified letter within the string.
+// Sample arguments : 'JSResourceS.com', 'o'*/
+
+function char_count(str, letter) 
+{
+ var letter_Count = 0;
+ for (var position = 0; position < str.length; position++) 
+ {
+    if (str.charAt(position) == letter) 
+      {
+      letter_Count += 1;
+      }
+  }
+  return letter_Count;
+}
+document.write("<br>The occurence of the letter in the string is "+char_count('Omama','a'));
+
+
+/*14. The Geometrizer
+Create 2 functions that calculate properties of a circle, using
+the definitions here.
+Create a function called calcCircumference:
+• Pass the radius to the function.
+• Calculate the circumference based on the radius, and output
+"The circumference is NN".
+Create a function called calcArea:
+• Pass the radius to the function.
+• Calculate the area based on the radius, and output "The area
+is NN".
+Circumference of circle = 2πr
+Area of circle = πr2
+*/
+document.write("<h1>Geometrizer</h1>");
+function calcCircumference(radius)
+{
+    var pi=3.142;
+    var circumference;
+    circumference=2*pi*radius;
+    return circumference;
+}
+document.write("<br>The Circumference of the Circle is "+calcCircumference(5));
+
+function calcArea(radius)
+{
+    var pi=3.142;
+    var Area;
+    Area=pi*radius*radius;
+    return Area;
+}
+document.write("<br>The Area  of the Circle is "+calcArea(5));
+
